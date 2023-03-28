@@ -5,7 +5,7 @@ ENV TZ=Australia/Sydney
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git apache2
 
-RUN git clone https://github.com/nerosketch/quakejs.git
+RUN git clone https://github.com/benwiggins/quakejs.git
 WORKDIR /quakejs
 RUN npm install
 RUN ls
