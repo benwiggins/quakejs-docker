@@ -1,14 +1,9 @@
-FROM ubuntu:20.04
+FROM node:18-bullseye-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
-ENV TZ=US/Eastern
+ENV TZ=Australia/Sydney
 
-RUN apt-get update
-RUN apt-get upgrade -y
-
-RUN apt-get install sudo curl git nodejs npm jq apache2 wget apt-utils -y
-
-RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN apt-get update && apt-get upgrade -y && apt-get install -y git apache2
 
 RUN git clone https://github.com/nerosketch/quakejs.git
 WORKDIR /quakejs
